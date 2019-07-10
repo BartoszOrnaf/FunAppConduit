@@ -1,5 +1,91 @@
-$body-color: blue;
+    
 
-body {
-  color: $body-color;
+.menuContainer {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-auto-rows:     50px;
+    color: #5CB85C;
+    font-size: 25px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
 }
+
+.titleContainer {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-auto-rows: 150px;
+    background-color: #5CB85C;
+}
+
+.feedContainer {
+    display: grid;
+    grid-template-columns: 20% 45% 2% 13% 20%;
+    color: #5CB85C;
+    font-size: 16px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: lighter;
+}
+.articleFeed {
+    display: grid;
+    grid-template-columns: 5% 89.5% 5.5%;     
+    line-height: 1px;
+    font-size: 16px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: lighter;     
+}
+.titleBig {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+}
+
+.titleSmall {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: lighter;
+}
+
+.spaceFromTop {
+    font-size: 17px;
+}
+
+.tabsClass {
+    background-color: #f3f3f3;
+    padding: 5px 10px 10px 10px;
+    border-radius: 4px;
+    line-height: 30px;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: lighter;
+    color: #373a3c;
+}
+
+.btn-secondary {
+    background-color: #818a91;
+    font-size: 12px;
+    border-radius: 12px; 
+    padding: 2px 6px;
+}
+
+.userImage{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
+.btn-outline-success {
+    font-size: 15px;
+    line-height: 5px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+hr{ 
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    border-width: 1px;
+  }
