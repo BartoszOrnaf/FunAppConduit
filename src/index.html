@@ -4,58 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <title>FunApp by Bartek</title>
 </head>
 
 <body>
 
-  <div class="menuContainer">
-    <div></div>
-    <div>FunApp! </div>
-    <div></div>
-  </div>
-
-  <div class="titleContainer">
-    <div></div>
-    <div>
-      <div class="spaceFromTop"><br></div>
-      <div class="titleBig">
+  <div class="container menu">
+    <div class="row ">
+      <div class="col">
         FunApp!
       </div>
-      <div class="titleSmall">
-        A place to share knowledge.
-      </div>
     </div>
-    <div></div>
   </div>
 
-  <div class="feedContainer">
-    <div></div>
-    <div>
-      <br>
-      <hr>
-      <div class="articleFeed">
-        <div><img src="https://static.productionready.io/images/smiley-cyrus.jpg" class="userImage"></div>
-        <div>userName </div>
-        <div><button type="button" class="btn btn-outline-success">❤&nbsp;0</button></div>
-        <div>postedOn</div> 
-      </div>
-      
+  <div class="title-container">
+    <div class="titleBig">
+      FunApp!
     </div>
-    <div></div>
-    <div"><br>
-      <div class="tabsClass">
+    <div class="titleSmall">
+      A place to share knowledge.
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 articles">
+        <div id="articles">
+          <!-- here append articles from printArticles -->
+        </div>
       </div>
+
+      <div class="col-md-3">
+        <div class="tabsClass">
+        </div>
+      </div>
+
+    </div>
   </div>
-  </div>
-
-
-
-
 
 
   <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
