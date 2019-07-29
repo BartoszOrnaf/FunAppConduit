@@ -1,39 +1,69 @@
-.menu {
-  color: #5cb85c;
-  font-size: 25px;
+@import "variables.scss";
+
+body {
   font-family: "Source Sans Pro", sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  color: #373a3c;
+  margin: 0px 0px 3px;
+}
+
+p {
+  font-size: $font-extra-small;
+  font-weight: 400;
+  color: #999999;
+  margin: 0px 0px 15px;
+}
+
+span {
+  font-size: 12.8px;
+  line-height: 1rem;
+  color: $color-gray-light;
+  margin: 0px;
+}
+
+a {
+  font-size: 12.8px;
+  line-height: 1rem;
+  color: #bbbbbb;
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0px;
+}
+
+.menu {
+  color: $color-green;
+  font-size: $font-medium;
   font-weight: bold;
 }
 
 .title-container {
-  background-color: #5cb85c;
+  background-color: $color-green;
   padding: 30px;
   margin-bottom: 30px;
 }
 
-.titleBig {
+.title-big {
   text-align: center;
   color: white;
-  font-size: 35px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-size: $font-large;
   font-weight: bold;
 }
 
-.titleSmall {
+.title-small {
   text-align: center;
   color: white;
-  font-size: 20px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-size: $font-small;
   font-weight: lighter;
 }
 
-.tabsClass {
+.tabs-class {
   background-color: #f3f3f3;
   padding: 5px 10px 10px 10px;
   border-radius: 4px;
   line-height: 30px;
-  font-size: 20px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-size: $font-small;
   font-weight: lighter;
   color: #373a3c;
 }
@@ -51,70 +81,35 @@ hr {
   border-width: 1px;
 }
 
-.userImage {
+.user-image {
   height: 32px;
   width: 32px;
   border-radius: 16px;
 }
 
-.userName {
+.user-name {
   color: #5cb85c;
   font-size: 16px;
   line-height: 1rem;
   margin: 0px;
-  font-family: "Source Sans Pro", sans-serif;
   font-weight: lighter;
 }
 
-.postedOn {
+.posted-on {
   font-size: 12.8px;
   line-height: 1rem;
-  color: #bbbbbb;
-  font-family: "Source Sans Pro", sans-serif;
-
-  margin: 0px;
-}
-
-h1 {
-  font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #373a3c;
-  margin: 0px 0px 3px;
-}
-
-p {
-  font-size: 15px;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #999999;
-  margin: 0px 0px 15px;
-}
-
-span {
-  font-size: 12.8px;
-  line-height: 1rem;
-  color: #bbbbbb;
-  font-family: "Source Sans Pro", sans-serif;
-
-  margin: 0px;
-}
-
-a {
-  font-size: 12.8px;
-  line-height: 1rem;
-  color: #bbbbbb;
-  font-family: "Source Sans Pro", sans-serif;
-
+  color: $color-gray-light;
   margin: 0px;
 }
 
 .btn-outline-success {
-  font-size: 15px;
+  font-size: $font-extra-small;
   line-height: 1px;
   padding: 10px;
   border-radius: 4px;
 }
 
-.feedContainer {
+.feed-container {
   display: grid;
   grid-template-columns: 40px 80px auto;
 }
