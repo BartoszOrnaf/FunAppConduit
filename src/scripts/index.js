@@ -1,24 +1,15 @@
 import '../styles/index.scss';
 
+import { getData, postData, notify } from './services';
+import { renderComponent } from './components/user-info.component';
+
+
+$("#user-info").append(renderComponent("Get tags", "https://conduit.productionready.io/api/tags"));
+$("#user-details").append(renderComponent("Get User Details", "https://conduit.productionready.io/api/user"));
+
 let tags = {};
 let articles = {};
 
-function getData(url) {
-    return new Promise((resolve, reject) => {
-        var httpReq = new XMLHttpRequest();
-        httpReq.onreadystatechange = () => {
-            if (httpReq.readyState === 4) {
-                if (httpReq.status === 200) {
-                    resolve(JSON.parse(httpReq.responseText));
-                } else {
-                    reject(new Error(httpReq.statusText));
-                }
-            }
-        };
-        httpReq.open("GET", url, true);
-        httpReq.send();
-    });
-}
 
 getData("https://conduit.productionready.io/api/articles").then(function (data) {
     articles = data;
@@ -29,6 +20,7 @@ getData("https://conduit.productionready.io/api/tags").then(function (data) {
     tags = data;
     printTags(tags, '.tabs-class');
 });
+
 
 function printTags(input, selector) {
     let htmlContentTags = '';
