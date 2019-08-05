@@ -3,10 +3,12 @@ import '../styles/index.scss';
 import { getData, postData, notify } from './services';
 import { renderComponent } from './components/user-info.component';
 
+let EMAIL = 'mpawluk+conduit@cybervadis.com';
+let PASSWORD = 'cybervadis';
 
 $("#user-info").append(renderComponent("Get tags", "https://conduit.productionready.io/api/tags"));
 $("#user-details").append(renderComponent("Get User Details", "https://conduit.productionready.io/api/user"));
-
+$("#user-login").append(renderComponent("Login", "https://conduit.productionready.io/api/user", EMAIL, PASSWORD));
 let tags = {};
 let articles = {};
 

@@ -1,18 +1,6 @@
-
-export function getData(url) {
-    // KROK 1: Dodaj header foo: bar do KAŻDEGO zapytania
-
-    return  fetch(url).then(data => data.json());
-
-    // KROK 3: Dodaj header Authorization: Token {{token}}
-
-}
-
-
-let token = null;
-
-export function postData(url, payload) {
-    // KROK 2: Zaimplementuj funkcję postData
+// KROK 1: Dodaj header foo: bar do KAŻDEGO zapytania
+// KROK 3: Dodaj header Authorization: Token {{token}}
+// KROK 2: Zaimplementuj funkcję postData
 
         // URL: https://conduit.productionready.io/api/users/login
         // PAYLOAD: {"user":{"email":"{{EMAIL}}", "password":"{{PASSWORD}}"}}
@@ -20,7 +8,34 @@ export function postData(url, payload) {
         // User: mpawluk+conduit@cybervadis.com
         // Pass: cybervadis
 
-    console.log('POST: ', url);
+let token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjE3MDQsInVzZXJuYW1lIjoidmFkaXMiLCJleHAiOjE1NzAxNzg5MjZ9.8QBeGODYXbgVOPCA6qlb_OmwRWOGeqidIxmi93xHvAw';
+
+
+export function getData(url) {
+    let h = new Headers();
+    
+    h.append('foo', 'bar');
+    if (token!=null){
+        h.append('Authorization', `Token ${token}`);
+    }
+    
+    let req =  new Request(url, {
+        method: 'GET',
+        headers: h
+    });
+    return  fetch(req).then(data => data.json());
+
+}
+
+export function postData(url, payload) {
+    let h = new Headers();
+    h.append(payload);
+    
+    let req =  new Request(url, {
+        method: 'POST', //It works, but in Request Method it shows GET... 
+        headers: h
+    });
+    return  fetch(req).then(data => data.json());
 }
 
 const ApiService = {
