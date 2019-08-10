@@ -1,12 +1,18 @@
-import { getData as apiGetData } from '../services';
+import { getData, postData } from '../services';
 
-export function renderComponent(btnText, url) {
-    return $('<button/>', {
-        text: btnText,
-        click: () => getData(url)
-    });
+export function renderComponent(httpMethod, btnText, url, payload) {
+    
+    if (httpMethod == 'get') {
+        return $('<button/>', {
+            text: btnText,
+            click: () => getData(url)
+        });
+    };
+    if (httpMethod == 'post') {
+        return $('<button/>', {
+            text: btnText,
+            click: () => postData(url, payload)
+        });
+    };
 }
 
-function getData(url) {
-    apiGetData(url);
-}

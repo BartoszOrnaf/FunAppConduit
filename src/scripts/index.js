@@ -1,16 +1,17 @@
 import '../styles/index.scss';
-
-import { getData, postData, notify } from './services';
+import { getData } from './services';
 import { renderComponent } from './components/user-info.component';
+import { userLogin } from './components/user-login.component';
 
-let EMAIL = 'mpawluk+conduit@cybervadis.com';
-let PASSWORD = 'cybervadis';
+$("#user-info").append(renderComponent("get","Get tags", "https://conduit.productionready.io/api/tags"));
+$("#user-details").append(renderComponent("get","Get User Details", "https://conduit.productionready.io/api/user"));
 
-$("#user-info").append(renderComponent("Get tags", "https://conduit.productionready.io/api/tags"));
-$("#user-details").append(renderComponent("Get User Details", "https://conduit.productionready.io/api/user"));
-$("#user-login").append(renderComponent("Login", "https://conduit.productionready.io/api/user", EMAIL, PASSWORD));
 let tags = {};
 let articles = {};
+
+$( "#login-btn" ).click(function() {
+    userLogin();
+  });
 
 
 getData("https://conduit.productionready.io/api/articles").then(function (data) {
@@ -68,7 +69,8 @@ function createArticleHTMLPartial(articleObj) {
     let articleTitle = $(`<h1>${articleObj.title}</h1>`);
     let articleDescription = $(`<p>${articleObj.description}</p>`);
     let readMore = $('<a/>', {
-        text: "Read more..."
+        text: "Read more...",
+        class: "read-more"
     }).prop("href", `https://demo.realworld.io/#/article/${articleObj.slug}`);
 
     articleHTML.append(

@@ -1,14 +1,11 @@
-import { postData as apiPostData } from '../services';
+import { postData } from '../services';
 
+export function userLogin() {
+    let email = document.getElementById("emailInput").value;
+    let password = document.getElementById("passwordInput").value;
+    let payload = { "user": { "email": email, "password": password } };
+    sessionStorage.setItem('token', "null");
+    postData("https://conduit.productionready.io/api/users/login", payload);
+    alert('Welcome: ' + email );
+};
 
-export function renderComponent(btnText, url, payload) {
-    return $('<button/>', {
-        text: btnText,
-        click: () => postData(url,EMAIL, PASSWORD)
-    });
-}
-
-function postData(url, EMAIL, PASSWORD) {
-    let payload = {'user': {'email': EMAIL, 'password': PASSWORD }};
-    apiPostData(url, payload);
-}

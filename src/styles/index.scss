@@ -24,24 +24,39 @@ span {
   margin: 0px;
 }
 
-a {
+.read-more {
   font-size: 12.8px;
   line-height: 1rem;
   color: #bbbbbb;
   font-family: "Source Sans Pro", sans-serif;
   margin: 0px;
 }
+.menu-container {
+  display: grid;
+  grid-template-columns: 80px auto 55px 55px 55px;
+}
 
 .menu {
+  padding: 8px 16px;
+}
+
+.menu-title {
   color: $color-green;
-  font-size: $font-medium;
+  font-size: $font-small;
   font-weight: bold;
+}
+.menu-navigation {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 200;
+  color: #999999;
 }
 
 .title-container {
   background-color: $color-green;
   padding: 30px;
   margin-bottom: 30px;
+  box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.3), inset 0 -8px 8px -8px rgba(0, 0, 0, 0.3);
 }
 
 .title-big {
@@ -66,6 +81,17 @@ a {
   font-size: $font-small;
   font-weight: lighter;
   color: #373a3c;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #5CB85C;
+  border-color: #5CB85C;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgb(68, 138, 68);
+  border-color:  rgb(68, 138, 68);
 }
 
 .btn-secondary {
@@ -112,4 +138,31 @@ hr {
 .feed-container {
   display: grid;
   grid-template-columns: 40px 80px auto;
+}
+
+.sign-in {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.3em;
+}
+
+.green-small {
+  text-align: center;
+  color: #5cb85c;
+  font-size: 16px;
+  line-height: 1rem;
+  margin: 0px;
+  font-weight: lighter;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.form-control-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+  color: rgb(0, 0, 0) !important;
 }

@@ -16,6 +16,7 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
+   
   ],
   module: {
     rules: [
@@ -40,3 +41,4 @@ module.exports = merge(common, {
     ]
   }
 });
+
