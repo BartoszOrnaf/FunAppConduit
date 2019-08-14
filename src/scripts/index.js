@@ -1,17 +1,20 @@
 import '../styles/index.scss';
-import { getData } from './services';
+import { getData, appendUserThumbnail, checkIfLoggedIn } from './services';
 import { renderComponent } from './components/user-info.component';
 import { userLogin } from './components/user-login.component';
 
-$("#user-info").append(renderComponent("get","Get tags", "https://conduit.productionready.io/api/tags"));
-$("#user-details").append(renderComponent("get","Get User Details", "https://conduit.productionready.io/api/user"));
+
+$("#user-info").append(renderComponent("get", "Get tags", "https://conduit.productionready.io/api/tags"));
+$("#user-details").append(renderComponent("get", "Get User Details", "https://conduit.productionready.io/api/user"));
 
 let tags = {};
 let articles = {};
 
-$( "#login-btn" ).click(function() {
+
+
+$("#login-btn").click(function () {
     userLogin();
-  });
+});
 
 
 getData("https://conduit.productionready.io/api/articles").then(function (data) {
@@ -95,7 +98,7 @@ function createArticleHTMLPartial(articleObj) {
                             class: "btn btn-outline-success",
                             text: `❤ ${favoritesCount}`
                         }).click(function () {
-                            alert('Adding likes is not working jet!');
+                            checkIfLoggedIn(articleObj.slug);
                         })
                     )
                 )
@@ -114,3 +117,4 @@ function createArticleHTMLPartial(articleObj) {
     return articleHTML;
 };
 
+appendUserThumbnail();

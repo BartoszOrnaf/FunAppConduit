@@ -37,8 +37,10 @@ export function postData(url, payload) {
         headers: h,
         body: JSON.stringify(payload)
     });
+    
     return fetch(req).then(data => data.json()).then(function (data) {
         sessionStorage.setItem('token', data.user.token);
+        return data;
     });
 }
 

@@ -5,7 +5,28 @@ export function userLogin() {
     let password = document.getElementById("passwordInput").value;
     let payload = { "user": { "email": email, "password": password } };
     sessionStorage.setItem('token', "null");
-    postData("https://conduit.productionready.io/api/users/login", payload);
-    alert('Welcome: ' + email );
+    function loginError() {
+        let errMessage = $('<ul>', {
+            class: "login-error"
+        }).append($('<li>', {
+            text: "email or password is invalid"
+        }));
+        $("#userLoginError").prepend(errMessage);
+    };
+
+    function deleteLoginMessage() {
+        $(".login-error").remove();
+    }
+
+   
+    postData("https://conduit.productionready.io/api/users/login", payload)
+        .then(() => { 
+            window.location = "./logged.html"; 
+         })
+        .catch(() => {
+            deleteLoginMessage();
+            loginError();
+        });
+
 };
 
