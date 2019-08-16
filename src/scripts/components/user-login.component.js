@@ -1,4 +1,4 @@
-import { postData } from '../services';
+import { postData, saveToken } from '../services';
 
 export function userLogin() {
     let email = document.getElementById("emailInput").value;
@@ -20,8 +20,8 @@ export function userLogin() {
 
    
     postData("https://conduit.productionready.io/api/users/login", payload)
-        .then(() => { 
-            window.location = "./logged.html"; 
+        .then((data) => { 
+            saveToken(data.user.token);
          })
         .catch(() => {
             deleteLoginMessage();

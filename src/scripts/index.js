@@ -1,8 +1,8 @@
 import '../styles/index.scss';
-import { getData, appendUserThumbnail, checkIfLoggedIn } from './services';
+import { getData, appendUserThumbnail } from './services';
 import { renderComponent } from './components/user-info.component';
 import { userLogin } from './components/user-login.component';
-
+import { renderLikeButton } from './components/like-btn/like-btn';
 
 $("#user-info").append(renderComponent("get", "Get tags", "https://conduit.productionready.io/api/tags"));
 $("#user-details").append(renderComponent("get", "Get User Details", "https://conduit.productionready.io/api/user"));
@@ -93,13 +93,7 @@ function createArticleHTMLPartial(articleObj) {
                     $('<div/>', {
                         style: "text-align:right"
                     }).append(
-                        $('<button/>', {
-                            type: "button",
-                            class: "btn btn-outline-success",
-                            text: `❤ ${favoritesCount}`
-                        }).click(function () {
-                            checkIfLoggedIn(articleObj.slug);
-                        })
+                        renderLikeButton(favoritesCount, articleObj.slug)
                     )
                 )
     ).append(

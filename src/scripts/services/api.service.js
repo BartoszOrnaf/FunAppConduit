@@ -8,27 +8,28 @@
 // User: mpawluk+conduit@cybervadis.com
 // Pass: cybervadis
 
-export function getData(url) {
-    let h = new Headers();
-    h.append('foo', 'bar');
+import authService from './authorization.service';
 
-    if (sessionStorage.getItem('token') && sessionStorage.getItem('token') != "null") {
-        h.append('Authorization', `Token ${sessionStorage.getItem('token')}`);
+export function getData(url) {
+    let requestHeaders = new Headers();
+    requestHeaders.append('foo', 'bar');
+
+    if (authService.isLoggedIn()) {
+        requestHeaders = authService.appendAuthHeader(requestHeaders);
     };
 
     let req = new Request(url, {
         method: 'GET',
-        headers: h
+        headers: requestHeaders
     });
     return fetch(req).then(data => data.json());
 }
 
 export function postData(url, payload) {
     let h = new Headers();
-    h.append('foo', 'bar');
     h.append('Content-Type', 'application/json');
 
-    if (sessionStorage.getItem('token') && sessionStorage.getItem('token') != "null") {
+    if (authService.isLoggedIn()) {
         h.append('Authorization', `Token ${sessionStorage.getItem('token')}`);
     };
 
@@ -39,7 +40,6 @@ export function postData(url, payload) {
     });
     
     return fetch(req).then(data => data.json()).then(function (data) {
-        sessionStorage.setItem('token', data.user.token);
         return data;
     });
 }
