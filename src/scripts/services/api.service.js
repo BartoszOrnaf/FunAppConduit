@@ -1,16 +1,15 @@
-// KROK 1: Dodaj header foo: bar do KAŻDEGO zapytania
-// KROK 3: Dodaj header Authorization: Token {{token}}
-// KROK 2: Zaimplementuj funkcję postData
-
 // URL: https://conduit.productionready.io/api/users/login
 // PAYLOAD: {"user":{"email":"{{EMAIL}}", "password":"{{PASSWORD}}"}}
 
 // User: mpawluk+conduit@cybervadis.com
 // Pass: cybervadis
 
+// Addings new articles do not work yet, one can add them in external project:
+// Demo: https://demo.productionready.io/
+// You can not like the same article twice!
+
 export function getData(url) {
     let h = new Headers();
-    h.append('foo', 'bar');
 
     if (sessionStorage.getItem('token') && sessionStorage.getItem('token') != "null") {
         h.append('Authorization', `Token ${sessionStorage.getItem('token')}`);
