@@ -1,9 +1,6 @@
+FunApp is a version of Conduit project made with Webpack, Bootstrap and Jquery.
+
 # Webpack Frontend Starterkit
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/wbkd/webpack-starter.svg)](https://greenkeeper.io/)
-
-A lightweight foundation for your next webpack based frontend project.
-
 
 ### Installation
 
